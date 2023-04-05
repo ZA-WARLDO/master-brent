@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&family=Prompt&family=Tajawal&display=swap');
+
+.hero-section{
+    background: url("../img/bg image.jpg") no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.brand_name{
+    font-family: 'Prompt';
+    text-transform: uppercase;
+}
+.tagline{
+    font-family: 'Caveat';
+    margin-top: 60px;
+}
+.vis{
+    margin-top: 250px;
+}
+.capsurelogo{
+    height: 50px;
+    width: 82px;
+    margin-left: -100px;
+}
+body{
+    background-color: #ffffff;
+    font-family: 'Poppins';
+}
+.nav-link{
+    color: #221459;
+    font-weight: 33px;
+}
+.navbar-nav .active{
+    border-bottom: #FFF61F solid 3px;
+}
+
+.loginbutton{
+    background-color: #221459;
+    color: #ffffff;
+    font-family: 'Poppins';
+    text-transform: uppercase ;
+    border: rgb(131, 128, 128) solid 1px;
+}
+
+.lgn-p{
+    padding-left: 148px;
+    padding-right: 148px;
+}
+.fg-m{
+    margin-left: 65px;
+    margin-right: 65px;
+}
+.signbutton{
+    background-color: #FFF61F;
+    color: #221459;
+    font-family: 'Poppins';
+    text-transform: uppercase ;
+    border: rgb(131, 128, 128) solid 1px;
+}
+
+.btn-dark-purple{
+    background-color: #221459;
+    color: #ffffff;
+}
+
+.txt-color{
+    color: #221459;
+}
+.bor{
+    border: #9884e9 solid 1px;
+}
+.bor2{
+    border-bottom: #9884e9 solid 1px;
+}
+.lgn-mgn {
+    margin-top: 130px;
+    margin-bottom: 130px;
+}
+
+.avl-color{
+    color: green;
+}
+.navl-color{
+    color:red;
+}
+.mgn-ser{
+    margin-left: 1130px;
+}
