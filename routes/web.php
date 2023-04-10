@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
-Route::get('events', [App\Http\Controllers\EventsController::class, 'index'])->name('services');
+Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('events');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');

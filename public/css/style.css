@@ -1,28 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&family=Prompt&family=Tajawal&display=swap');
 
+
 .hero-section{
-    background: url("../img/bg image.jpg") no-repeat;
-    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: calc(100% + 50px); 
     background-size: cover;
-    background-attachment: fixed;
+    background: url("../img/bg image.jpg") no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 
+.content{
+    margin-top: 50px;
+    position: relative; 
+    z-index: 1; 
+}
 .brand_name{
     font-family: 'Prompt';
     text-transform: uppercase;
 }
+.bnd-name-size{
+    font-size: 50px;
+}
+.mgn-brand{
+    margin-left: 0;
+}
+.auth-mgn{
+    margin-right: -60px;
+}
 .tagline{
     font-family: 'Caveat';
     margin-top: 60px;
+    font-size: 40px;
 }
 .vis{
-    margin-top: 250px;
+    margin-top: 200px;
 }
+
 .capsurelogo{
     height: 50px;
     width: 82px;
     margin-left: -100px;
+    margin-right: 0;
 }
 body{
     background-color: #ffffff;
@@ -87,4 +110,40 @@ body{
 }
 .mgn-ser{
     margin-left: 1130px;
+}
+
+.navbar-nav .form-inline {
+    width: 140%;
+}
+
+.navbar-nav .form-inline .form-control {
+    width: 50%;
+}
+
+/* Profile Stylesheets*/
+.profile-size{
+    width: 320px;
+    height: 300px;
+    border: gray solid 0.5px ;
+}
+.fnt-style{
+    font-family: 'Poppins';
+    color: #66645E;
+}
+.opac{
+    opacity: 12%;
+}
+.ltr-spng{
+   letter-spacing: 0.3em;
+}
+.carousel-size{
+    width: 670px;
+    height: 493px;
+}
+.brd-trans{
+    border-color: white;
+}
+.btn-avail{
+    color: green;
+    border: gray solid 1px;
 }

@@ -6,8 +6,8 @@
     <button class="btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
        Service
     </button>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Photographer Commission</a></li>
+    <ul class="dropdown-menu ">
+        <li><a class="dropdown-item" href="#">Photographer</a></li>
         <li><a class="dropdown-item" href="#">Studio Photoshoot</a></li>
     </ul>
     </div>

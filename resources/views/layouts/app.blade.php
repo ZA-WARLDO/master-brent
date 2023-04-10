@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{asset('img/CapSure.png')}}" class="capsurelogo" alt="..."/>
+                <img src="{{asset('img/CapSure.png')}}" class=" capsurelogo" alt="..."/><span class="m-2 brand_name mgn-brand">CapSure</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,13 +41,29 @@
                     <li class="nav-item text-uppercase fw-bold"><a href="/" class="nav-link {{request()->is('/') ? 'active' : ''}}">Home</a></li>
                     <li class="nav-item text-uppercase fw-bold"><a href="/services" class="nav-link {{request()->is('services') ? 'active' : ''}}">Services</a></li>
                     <li class="nav-item text-uppercase fw-bold"><a href="/events" class="nav-link {{request()->is('events') ? 'active' : ''}}">Events</a></li>
-                    <li class="nav-item text-uppercase fw-bold"><a href="#" class="nav-link {{request()->is('about') ? 'active' : ''}}">About</a></li>
+                    <li class="nav-item text-uppercase fw-bold"><a href="/about" class="nav-link {{request()->is('about') ? 'active' : ''}}">About</a></li>
+
+                     <!-- Search Bar -->
+                     <div class="container">
+                        <form class="form-inline my-2 my-lg-0">
+                            <div class="row">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search &quot;Birthday&quot; or &quot;Wedding&quot;" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </form>
+                        </div>
+                        
                     </ul>
 
 
-
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto auth-mgn">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -64,22 +80,27 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                <img src="{{ Auth::user()->avatar }}" class="avatar rounded-circle me-2" alt="Avatar">{{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/profile">Profile</a>
+                                    <a class="dropdown-item" href="#">Chat</a>
+                                    <a class="dropdown-item" href="#">Appointment</a>
+                                    <a class="dropdown-item" href="#">Setting</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Log out') }}
                                     </a>
-
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
                         @endguest
+                        
                     </ul>
                 </div>
             </div>
