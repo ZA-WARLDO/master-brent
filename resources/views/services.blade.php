@@ -11,35 +11,34 @@
         <li><a class="dropdown-item" href="#">Studio Photoshoot</a></li>
     </ul>
     </div>
-    <table class="table mx-4">
+   
+    <div class="container">
+    <table class="table mx-auto border border-black mt-3">
     <thead>
         <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Project Count</th>
+        <th scope="col">Commission Fee</th>
         <th scope="col">Availability</th>
         </tr>
     </thead>
+    @for($i = 1; $i < 9; $i++)
     <tbody>
         <tr>
-        <th scope="row">1</th>
+        <th scope="row">{{$i}}</th>
         <td>Alex Babineaux</td>
         <td>11</td>
-        <td class="avl-color">Available</td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Lexa Kitten</td>
-        <td>7</td>
-        <td class="navl-color">Not Available</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Brandy Roar</td>
-        <td>4</td>
+        <td>800 pesos</td>
         <td class="avl-color">Available</td>
         </tr>
     </tbody>
+    @endfor
     </table>
+    <div class="text-end ">
+    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Prev </button>
+    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Next </button>
+    </div>
 </div>
+
 @endsection

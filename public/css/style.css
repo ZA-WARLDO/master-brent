@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&family=Prompt&family=Tajawal&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 .hero-section{
     position: absolute;
@@ -146,4 +146,38 @@ body{
 .btn-avail{
     color: green;
     border: gray solid 1px;
+}
+.text-blue{
+    color: #221459;
+}
+.profile-font{
+    font-family: 'Raleway';
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* Chat Styles */
+
+.profile-pic-size{
+    width: 30px;
+    height: 20px;
+}
+
+/*Appointment Style */
+.btn-red{
+    background-color: #D21010;
+    color: #ffffff;
+}
+.btn-aqua{
+    background-color: #023047;
+    color: #ffffff;
+}
+.app-fnt{
+    font-family: 'Poppins';
+}
+.border-black{
+    border: #66645E solid 1px;
 }
