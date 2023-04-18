@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -15,7 +16,14 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile');
+       // Get the authenticated user
+        $user = Auth::user();
+
+        // Get the user data using Eloquent
+        $userData = User::where('id', $user->id)->first();
+
+        // Pass the user data to the view
+        return view('profile', ['user' => $userData]);
     }
 
     /**

@@ -11,7 +11,7 @@
             Capsure is a website that has a multitude of available photographers and photography studios that meet your needs. 
             Capture is sure to help you find your ideal photographer or studio for your special event!
         </p>
-        <button class="btn-dark-purple px-3 m-auto fs-4">Appoint Now</button>
+        <a href="/services"><button class="btn-dark-purple px-3 m-auto fs-4">Appoint Now</button></a>
     </div>
 </div>
 </div>

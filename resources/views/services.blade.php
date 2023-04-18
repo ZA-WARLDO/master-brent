@@ -36,8 +36,8 @@
     @endfor
     </table>
     <div class="text-end ">
-    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Prev </button>
-    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Next </button>
+    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Next </button>
+    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Prev </button>
     </div>
 </div>
 

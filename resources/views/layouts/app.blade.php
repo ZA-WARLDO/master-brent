@@ -86,7 +86,6 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/profile">Profile</a>
-                                    <a class="dropdown-item" href="/chat">Chat</a>
                                     <a class="dropdown-item" href="/appointment">Appointment</a>
                                     <a class="dropdown-item" href="/setting">Setting</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

@@ -22,7 +22,6 @@ Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'
 Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('events');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
-Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index'])->name('chat');
 Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
 
 Route::middleware(['auth'])->group(function () {

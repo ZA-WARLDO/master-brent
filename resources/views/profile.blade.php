@@ -5,33 +5,32 @@
     <h2 class="text-center fs-1 my-3 fnt-style p-2 ltr-spng fw-bold">Profile</h2>
     <hr class="opac">
     <div class="container my-3 profile-font">
-        <div class="row">
+        <div class="row offset-md-1">
             <div class="col-md-4 my-2">
             <img src="{{asset('img/Alex.png')}}" class="profile-size mx-3" alt="profile.jpg">
             </div>
             <div class="col-md-8 ms-auto auth-mgn">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="mb-md-0 fw-bold">Name Surname</h1>
-                    <p class="mt-md-0 text-blue fs-5">User Type</p>
+                    <h1 class="mb-md-0 fw-bold">{{$user->name}}</h1>
+                    <p class="mt-md-0 text-blue fs-5">{{$user->user_type}}</p>
                 </div>
-                <div class="col-md-6">
-                <i class=" fs-3 bi bi-pencil-square"></i>
-                </div>
+                
             </div>
             <div class="fw-regular mt-md-2">
-                <p>Address: </p>
-                <p>Email: </p>
-                <p>Contact Number: </p>
-                <p>Years Experience: </p>
+                <p>Address: <b>{{$user->address}} </b></p>
+                <p>Email: <b class="email-clr">{{$user->email}}</b></p>
+                <p>Contact Number: <b> {{$user->contact}} </b></p>
+                @if($user->user_type!='Customer')
+                <p>Years Experience: <b> {{$user->year_experience}}</b> </p>
+                @else
+                <p></br></p>
+                @endif
 
             <!--Button for Chat -->
             <div class="row mt-md-4">
-                <div class="col-md-3">
-                    <button class="btn btn-dark-purple "><a class="text-decoration-none text-white" href="/chat"><i class=" p-1 my-2 bi bi-envelope-fill"></i> Send a message </a></buton>
-                </div>
                 <div class="col-md-2">
-                    <button class="btn btn-avail fw-bold">Available</buton>
+                    <button class="btn btn-avail fw-bold px-5 mt-2">Available</buton>
                 </div>
             </div>
             </div>       

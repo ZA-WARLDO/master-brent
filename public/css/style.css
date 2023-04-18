@@ -144,7 +144,8 @@ body{
     border-color: white;
 }
 .btn-avail{
-    color: green;
+    color: rgb(255, 255, 255);
+    background-color: #028A0f;
     border: gray solid 1px;
 }
 .text-blue{
@@ -158,12 +159,8 @@ body{
   width: 50px;
   height: 50px;
 }
-
-/* Chat Styles */
-
-.profile-pic-size{
-    width: 30px;
-    height: 20px;
+.email-clr{
+    color: #0A3EC6;
 }
 
 /*Appointment Style */
@@ -180,4 +177,13 @@ body{
 }
 .border-black{
     border: #66645E solid 1px;
+}
+.appnt-mgn-lf{
+    margin-left: -40px;
+}
+.appnt-mgn-rt{
+    margin-right: 10px;
+}
+.table-brd-clr{
+    background-color: #221459;
 }

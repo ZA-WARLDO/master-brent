@@ -7,11 +7,11 @@
         <div class="col-md-2">
     <button class="btn btn-aqua" type="button" href="#">Add a schedule</button>
         </div>
-        <div class="col-md-2">
-    <button class="btn btn-aqua" type="button" href="#">Edit a schedule</button>
+        <div class="col-md-1 appnt-mgn-lf appnt-mgn-rt">
+    <button class="btn btn-aqua" type="button" href="#">Edit</button>
         </div>
-        <div class="col-md-2">
-    <button class="btn btn-red" type="button" href="#">Delete a schedule</button>
+        <div class="col-md-1">
+    <button class="btn btn-red appnt-mgn-lf" type="button" href="#">Delete</button>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
 <div class="container my-4 ">
 <table class="table table-bordered border-black">
   <thead>
-    <tr>
+    <tr class="table-brd-clr text-white text-center">
       <th scope="col">#</th>
       <th scope="col">Client/Agent Name</th>
       <th scope="col">Start Date</th>
@@ -56,8 +56,8 @@
   </tbody>
 </table>
 <div class="text-end ">
-    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Prev </button>
-    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Next </button>
+    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Next </button>
+    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Prev </button>
     </div>
 </div>
 

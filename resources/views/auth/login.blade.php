@@ -63,9 +63,13 @@
                                 </button>
                             </div>
 
-                            <div class="text-center offset-md-1 my-2">
-                            <p>Don't have an account?
+                            <div class="offset-md-4 my-2">
+                                <div class="row">
+                                    <div class="col-md-8">
+                            <p class="mb-0">Don't have an account?                    
                             <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signbutton fw-bold btn-sm rounded">{{ __('Sign Up') }}</button></a></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
