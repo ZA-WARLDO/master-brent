@@ -23,6 +23,7 @@ Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
+Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');
 
 Route::middleware(['auth'])->group(function () {
     // Protected routes 

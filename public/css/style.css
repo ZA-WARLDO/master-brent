@@ -102,6 +102,12 @@ body{
     margin-bottom: 130px;
 }
 
+/*SignUp Style */
+.sgn-mgn {
+    margin-top: 110px;
+    margin-bottom: 130px;
+}
+
 .avl-color{
     color: green;
 }
@@ -185,5 +191,19 @@ body{
     margin-right: 10px;
 }
 .table-brd-clr{
+    background-color: #221459;
+}
+
+/*About */
+
+.bag-img{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: calc(100% + 50px); 
+    background-size: cover;
+    background-attachment: fixed;
     background-color: #221459;
 }
