@@ -7,15 +7,15 @@
             <div class="card bor ">
                 <div class="card-header fs-3 bg-white text-center txt-color fw-bold bor2 ltr-spng">{{ __('USER LOGIN') }}</div>
 
-                <div class="card-body">
+                <div class="card-body me-5">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end"><i class="bi bi-person-circle mx-3 fs-4"></i></label>
 
-                            <div class="col-md-6 ">
-                                <input id="email" placeholder="Email" type="email" class=" form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <div class="col-md-6">
+                                <input id="email" placeholder="Email" type="email" class=" ppn-fnt bor form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end"><i class="bi bi-key mx-3 fs-4 fw-bold"></i></label>
 
                             <div class="col-md-6 ">
-                                <input id="password" placeholder="Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" placeholder="Password" type="password" class=" ppn-fnt bor form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -58,21 +58,24 @@
                                     </a>
                                 @endif
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn loginbutton lgn-p">
+                                <button type="submit" class="btn loginbutton lgn-p ">
                                     {{ __('Login') }}
                                 </button>
                             </div>
 
                             <div class="offset-md-4 my-2">
-                                <div class="row">
-                                    <div class="col-md-8">
-                            <p class="mb-0">Don't have an account?                    
-                            <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signbutton fw-bold btn-sm rounded">{{ __('Sign Up') }}</button></a></p>
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <p class="d-inline-block">Don't have an account?</p>  
+                                        <a class="nav-link d-inline-block" href="{{ route('register') }}">
+                                        <button type="button" class="btn signbutton fw-bold btn-sm rounded">{{ __('Sign Up') }}</button>
+                                        </a>
+                                    </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                         </div>
-                        
                     </form>
                 </div>
             </div>

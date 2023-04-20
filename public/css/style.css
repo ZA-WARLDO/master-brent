@@ -65,11 +65,12 @@ body{
     font-family: 'Poppins';
     text-transform: uppercase ;
     border: rgb(131, 128, 128) solid 1px;
+    text-align: center;
 }
 
 .lgn-p{
     padding-left: 148px;
-    padding-right: 148px;
+    padding-right: 120px;
 }
 .fg-m{
     margin-left: 65px;
@@ -92,21 +93,21 @@ body{
     color: #221459;
 }
 .bor{
-    border: #9884e9 solid 1px;
+    border: #221459 solid 1px;
 }
 .bor2{
-    border-bottom: #9884e9 solid 1px;
+    border-bottom: #ffffff solid 1px;
 }
 .lgn-mgn {
-    margin-top: 130px;
-    margin-bottom: 130px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.ppn-fnt{
+    font-family: 'Poppins';
+    letter-spacing: 0.3em;
 }
 
 /*SignUp Style */
-.sgn-mgn {
-    margin-top: 110px;
-    margin-bottom: 130px;
-}
 
 .avl-color{
     color: green;
