@@ -69,8 +69,8 @@ body{
 }
 
 .lgn-p{
-    padding-left: 148px;
-    padding-right: 120px;
+    padding-left: 125px;
+    padding-right: 125px;
 }
 .fg-m{
     margin-left: 65px;
@@ -105,6 +105,9 @@ body{
 .ppn-fnt{
     font-family: 'Poppins';
     letter-spacing: 0.3em;
+}
+.mgn-card{
+    margin-right: 80px;
 }
 
 /*SignUp Style */
@@ -194,6 +197,21 @@ body{
 .table-brd-clr{
     background-color: #221459;
 }
+.create-appointment {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #ffffff;
+    padding: 50px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+.no-scroll {
+    overflow: hidden;
+  }
+    
 
 /*About */
 

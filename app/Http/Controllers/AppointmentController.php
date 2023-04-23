@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\Component;
 
 class AppointmentController extends Controller
 {
@@ -14,7 +16,13 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        return view ('appointment');
+         // Get the authenticated user
+         $user = Auth::user();
+
+         // Get the user data using Eloquent
+         $appData = Appointment::where('user_id', $user->id)->get();
+
+         return view('appointment',['appointments' => $appData]);
     }
 
     /**

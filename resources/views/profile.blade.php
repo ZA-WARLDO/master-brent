@@ -23,16 +23,13 @@
                 <p>Contact Number: <b> {{$user->contact}} </b></p>
                 @if($user->user_type!='Customer')
                 <p>Years Experience: <b> {{$user->year_experience}}</b> </p>
-                @else
-                <p></br></p>
-                @endif
-
-            <!--Button for Chat -->
+                <!--Button for Availability -->
             <div class="row mt-md-4">
                 <div class="col-md-2">
                     <button class="btn btn-avail fw-bold px-5 mt-2">Available</buton>
                 </div>
             </div>
+               
             </div>       
     </div>
     </div>
@@ -90,6 +87,8 @@
     </button>
     </div>
 </div>
-
+                @else
+                <p></br></p>
+                @endif
 </div>
 @endsection

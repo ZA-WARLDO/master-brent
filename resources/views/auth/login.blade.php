@@ -7,7 +7,7 @@
             <div class="card bor ">
                 <div class="card-header fs-3 bg-white text-center txt-color fw-bold bor2 ltr-spng">{{ __('USER LOGIN') }}</div>
 
-                <div class="card-body me-5">
+                <div class="card-body mgn-card">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
