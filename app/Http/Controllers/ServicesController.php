@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\Services;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ServicesController extends Controller
 {
@@ -12,10 +15,27 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view ('services');
+    public function index($user_type = null)
+{
+    if (!in_array($user_type, ['Photographer', 'Studio Owner'])) {
+        $user_type = 'Photographer';
     }
+    
+    $query = User::query();
+
+    $query->whereHas('profile', function ($query) use ($user_type) {
+        $query->where('user_type', $user_type);
+    });
+
+    $users = $query->paginate(3);
+
+    return view('services', compact('users', 'user_type'));
+}
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.

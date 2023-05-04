@@ -26,7 +26,7 @@
                 <!--Button for Availability -->
             <div class="row mt-md-4">
                 <div class="col-md-2">
-                    <button class="btn btn-avail fw-bold px-5 mt-2">Available</buton>
+                    <button class="btn btn-avail fw-bold px-5 mt-2">{{$profile->availability}}</buton>
                 </div>
             </div>
                

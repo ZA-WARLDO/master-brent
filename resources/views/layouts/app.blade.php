@@ -42,24 +42,7 @@
                     <li class="nav-item text-uppercase fw-bold"><a href="/" class="nav-link {{request()->is('/') ? 'active' : ''}}">Home</a></li>
                     <li class="nav-item text-uppercase fw-bold"><a href="/services" class="nav-link {{request()->is('services') ? 'active' : ''}}">Services</a></li>
                     <li class="nav-item text-uppercase fw-bold"><a href="/events" class="nav-link {{request()->is('events') ? 'active' : ''}}">Events</a></li>
-                    <li class="nav-item text-uppercase fw-bold"><a href="/about" class="nav-link {{request()->is('about') ? 'active' : ''}}">About</a></li>
-
-                     <!-- Search Bar -->
-                     <div class="container">
-                        <form class="form-inline my-2 my-lg-0">
-                            <div class="row">
-                            <div class="col-sm-12">
-                                <div class="input-group">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search &quot;Birthday&quot; or &quot;Wedding&quot;" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </form>
-                        </div>
-                        
+                    <li class="nav-item text-uppercase fw-bold"><a href="/about" class="nav-link {{request()->is('about') ? 'active' : ''}}">About</a></li>    
                     </ul>
 
 

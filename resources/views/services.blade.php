@@ -2,43 +2,47 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="dropdown mgn-ser">
-    <button class="btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-       Service
-    </button>
-    <ul class="dropdown-menu ">
-        <li><a class="dropdown-item" href="#">Photographer</a></li>
-        <li><a class="dropdown-item" href="#">Studio Photoshoot</a></li>
-    </ul>
-    </div>
-   
-    <div class="container">
+    <<div class="dropdown mgn-ser">
+        <button id="service-dropdown" class="btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Service
+        </button>
+        <ul class="dropdown-menu">
+            <li @if(!$user_type || $user_type==='Photographer' ) class="active" @endif><a class="dropdown-item" href="{{ route('services.index', ['user_type' => 'Photographer']) }}">Photographer</a></li>
+            <li @if($user_type==='Studio Owner' ) class="active" @endif><a class="dropdown-item" href="{{ route('services.index', ['user_type' => 'Studio Owner']) }}">Studio Photoshoot</a></li>
+        </ul>
+</div>
+</div>
+
+<div class="container">
     <table class="table mx-auto border border-black mt-3">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Project Count</th>
-        <th scope="col">Commission Fee</th>
-        <th scope="col">Availability</th>
-        </tr>
-    </thead>
-    @for($i = 1; $i < 9; $i++)
-    <tbody>
-        <tr>
-        <th scope="row">{{$i}}</th>
-        <td>Alex Babineaux</td>
-        <td>11</td>
-        <td>800 pesos</td>
-        <td class="avl-color">Available</td>
-        </tr>
-    </tbody>
-    @endfor
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Project Count</th>
+                <th scope="col">Commission Fee</th>
+                <th scope="col">Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($users as $user)
+            <tr>
+                <td>{{$user->name}}</td>
+                <td>{{$user->profile ? $user->profile->project_count : null}}</td>
+                <td>{{$user->profile ? $user->profile->fee : null}} pesos</td>
+                @if ($user->profile && $user->profile->availability == "Available")
+                <td class="avl-color">{{$user->profile->availability}}</td>
+                @else
+                <td class="navl-color">{{$user->profile ? $user->profile->availability : null}}</td>
+                @endif
+            </tr>
+            @endforeach
+
+        </tbody>
     </table>
-    <div class="text-end ">
-    <button class="btn btn-dark-purple float-end ms-4 mt-md-3" type="button" href="#"> Next </button>
-    <button class="btn btn-dark-purple float-end mt-md-3" type="button" href="#"> Prev </button>
+    <div class="text-end">
+        {{ $users->links('pagination::bootstrap-4') }}
     </div>
+</div>
 </div>
 
 @endsection

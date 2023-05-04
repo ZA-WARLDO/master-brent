@@ -24,6 +24,9 @@ Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment');
 Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');
+Route::get('/services/{user_type?}',[App\Http\Controllers\ServicesController::class, 'index'])->name('services.index');
+
+
 
 Route::middleware(['auth'])->group(function () {
     // Protected routes 

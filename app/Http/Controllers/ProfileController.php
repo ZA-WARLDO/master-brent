@@ -21,9 +21,10 @@ class ProfileController extends Controller
 
         // Get the user data using Eloquent
         $userData = User::where('id', $user->id)->first();
+        $userProfile = Profile::where('user_id', $user->id)->first();
 
         // Pass the user data to the view
-        return view('profile', ['user' => $userData]);
+        return view('profile', ['user' => $userData, 'profile' => $userProfile]);
     }
 
     /**

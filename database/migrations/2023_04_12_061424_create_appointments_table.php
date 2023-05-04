@@ -18,9 +18,9 @@ class CreateAppointmentsTable extends Migration
             $table->unsignedBigInteger("user_id");
             $table->string("cus_name");
             $table->date("start_date");
-            $table->date("end_date");
+            $table->date("end_date")->nullable();
             $table->string("event");
-            $table->string("start_time");
+            $table->string("start_time")->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });

@@ -48,6 +48,8 @@
 </div>
 
 <script>
+
+  // adding appointments
   const addButton = document.querySelector('.add-button');
   const createApp = document.querySelector('.create-appointment');
   const body = document.querySelector('body');

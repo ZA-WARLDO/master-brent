@@ -42,5 +42,85 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
+        User::create([
+            'id' => 3,
+            'name' => "Earl John Celis",
+            'email' => "ercelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('earlpassword'),
+            'user_type' => 'Photographer',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+
+        User::create([
+            'id' => 4,
+            'name' => "Errol Jay Celis",
+            'email' => "ejcelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Studio Owner',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'id' => 5,
+            'name' => "Errol Jayce Celis",
+            'email' => "errcelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Studio Owner',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'id' => 6,
+            'name' => "Errol Jamae Celis",
+            'email' => "ejacelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Studio Owner',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'id' => 7,
+            'name' => "Errol Jami Celis",
+            'email' => "ejamicelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Studio Owner',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'id' => 8,
+            'name' => "Earl James Celis",
+            'email' => "earljcelis@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Studio Owner',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+        User::create([
+            'id' => 9,
+            'name' => "Xavier D. Santiago",
+            'email' => "xsantiago@gbox.adnu.edu.ph",
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('errolpassword'),
+            'user_type' => 'Photographer',
+            'contact'=> "09123456689",
+            'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'remember_token' => Str::random(10),
+        ]);
+
+
     }
 }
