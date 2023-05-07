@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&family=Prompt&family=Tajawal&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
 .hero-section{
     position: absolute;
@@ -248,5 +249,17 @@ body{
     height: calc(100% + 50px); 
     background-size: cover;
     background-attachment: fixed;
-    background-color: #221459;
+    background: url("../img/bg-about.jpg") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.about_info{
+    color: #221459;
+}
+.size{
+    font-family: 'Roboto';
+    font-size: 70px;
+}
+.mv{
+    text-align: justify;
 }
