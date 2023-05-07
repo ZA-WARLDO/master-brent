@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'cus_name',
+        'start_date',
+        'end_date',
+        'event',
+        'start_time',
+    ];
 }

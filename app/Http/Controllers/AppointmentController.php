@@ -16,13 +16,13 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-         // Get the authenticated user
-         $user = Auth::user();
+        // Get the authenticated user
+        $user = Auth::user();
 
-         // Get the user data using Eloquent
-         $appData = Appointment::where('user_id', $user->id)->get();
+        // Get the user data using Eloquent
+        $appData = Appointment::where('user_id', $user->id)->paginate(5);
 
-         return view('appointment',['appointments' => $appData]);
+        return view('appointment', ['appointments' => $appData]);
     }
 
     /**
@@ -43,7 +43,24 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Retrieve the authenticated user
+        $user = Auth::user();
+
+        $appointment = new Appointment();
+        $appointment->cus_name = $request->input('cus_name');
+        $appointment->start_date = $request->input('start_date');
+        $appointment->end_date = $request->input('end_date');
+        $appointment->event = $request->input('event');
+        $appointment->start_time = $request->input('start_time');
+
+        // Set the user_id
+        $appointment->user_id = $user->id;
+
+        // Save the appointment
+        $appointment->save();
+
+        // Redirect back to the index or show page
+        return redirect()->route('appointment');
     }
 
     /**
@@ -88,6 +105,10 @@ class AppointmentController extends Controller
      */
     public function destroy(Appointment $appointment)
     {
-        //
+        // Delete the appointment
+        $appointment->delete();
+
+        // Redirect back to the index or show page
+        return redirect()->route('appointment');
     }
 }

@@ -1,37 +1,39 @@
-<!doctype HTML>
-<html>
-<head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-     <!-- Bootstrap Font Icon CSS -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-     <!-- Custom Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-<title></title>
-</head>
-<body>
+@section('content')
 <div class="container-fluid">
-    <div class="bag-img">
-    </div>
-    <div class="containter text-white text-center">
-    Hello! This is US
+    <div class="content">
+        <h2 class="mb-4">Setting</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Profile</a></h5>
+                        <p class="card-text">Update your profile information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Portfolio</a></h5>
+                        <p class="card-text">Manage your portfolio items.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#">Delete Account</a></h5>
+                        <p class="card-text">Permanently delete your account.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</body>
-</html>
+@endsection

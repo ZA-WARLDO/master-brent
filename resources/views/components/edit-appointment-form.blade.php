@@ -1,6 +1,7 @@
-<div class="create-appointment" hidden>
-  <form method="POST" action="{{ route('appointment.add') }}">
+<div class="edit-appointment" hidden>
+  <form method="POST" action="{{ route('appointment.edit',$appointment->id) }}">
     @csrf
+    @method('PUT')
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="inputName">Name</label>
@@ -29,8 +30,8 @@
     </div>
     <div class="form-row">
       <div class="form-group col-md-12">
-        <button type="button" class="btn btn-secondary me-1 mt-2" data-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary mt-2">Add</button>
+        <button type="button" class="btn btn-secondary me-1 mt-2 cancel-button" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary mt-2">Update</button>
       </div>
     </div>
   </form>
