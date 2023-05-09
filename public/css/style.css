@@ -216,6 +216,17 @@ body{
     border: 1px solid #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
+.edit-appointment{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #ffffff;
+    padding: 50px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 .no-scroll {
     overflow: hidden;
   }

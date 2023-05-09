@@ -80,10 +80,13 @@ class AppointmentController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Appointment $appointment)
+    public function edit($id)
     {
-        //
+        $appointment = Appointment::find($id);
+
+        return view('editingAppointment', ['appointment' => $appointment]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -92,9 +95,18 @@ class AppointmentController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Appointment $appointment)
+    public function update(Request $request, $id)
     {
-        //
+        // Find the appointment by ID
+        $appointment = Appointment::findOrFail($id);
+
+        // Update the appointment with the form data
+        $appointment->update($request->all());
+
+        // Optionally, you can add a success message or perform other actions
+
+        // Redirect back to the appointments index page
+        return redirect()->route('appointment');
     }
 
     /**

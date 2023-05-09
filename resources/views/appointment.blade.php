@@ -33,8 +33,11 @@
           <td>
             <div class="row text-center">
               <div class="col-md-1 me-3">
-                <button class="btn btn-aqua edit-button" type="submit" href="#">Edit</button>
+                <a href="/appointment/edit/{{$appointment->id}}" class="btn btn-aqua edit-button" type="button">Edit</a>
               </div>
+              
+              
+            
               <div class="col-md-1 ms-4">
                 <form action="{{ route('appointment.delete', $appointment->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointment?');">
                   @csrf
@@ -54,8 +57,10 @@
     </div>
   </div>
   <x-appointment-form></x-appointment-form>
+
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
   // adding appointments
   const addButton = document.querySelector('.add-button');
@@ -73,32 +78,32 @@
     body.classList.remove('no-scroll');
   });
 
-  // editing appointment
+  // editing appointments
+  /*
   const editButtons = document.querySelectorAll('.edit-button');
   const editForm = document.querySelector('.edit-appointment');
-  const editCancelButton = editForm.querySelector('.cancel-button');
 
-  editButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      editForm.hidden = !editForm.hidden;
-      body.classList.toggle('no-scroll');
+  editButtons.forEach(editButton => {
+    editButton.addEventListener('click', () => {
+      editForm.hidden = false;
+      body.classList.add('no-scroll');
     });
   });
 
-  editCancelButton.addEventListener('click', () => {
+  const cancelEditButton = editForm.querySelector('.cancel-button');
+  cancelEditButton.addEventListener('click', () => {
     editForm.hidden = true;
     body.classList.remove('no-scroll');
-  });
+  });*/
 
   //delete confirmation
   document.getElementById('deleteForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
-    
+
     if (confirm('Are you sure you want to delete this appointment?')) {
       this.submit(); // Submit the form if user confirms
     }
   });
-  
 </script>
 
 @endsection
