@@ -246,7 +246,7 @@ body{
     top: 0;
     left:0;
     width: 100%;
-    height: calc(100% + 50px); 
+    height: calc(100% + 0px); 
     background-size: cover;
     background-attachment: fixed;
     background: url("../img/bg-about.jpg") no-repeat;
@@ -262,4 +262,24 @@ body{
 }
 .mv{
     text-align: justify;
+}
+
+/*Setting*/
+
+.bg-setting{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: calc(100% + 0px);
+    background-size: cover;
+    background-attachment: fixed;
+    background: url("../img/bg-setting.jpg") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.content-st{
+    margin-bottom: -100px;
 }

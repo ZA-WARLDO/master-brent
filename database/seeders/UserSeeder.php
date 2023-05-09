@@ -51,6 +51,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Photographer',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
 
@@ -63,6 +64,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Studio Owner',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
         User::create([
@@ -74,6 +76,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Studio Owner',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
         User::create([
@@ -85,6 +88,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Studio Owner',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
         User::create([
@@ -96,6 +100,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Studio Owner',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
         User::create([
@@ -107,6 +112,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Studio Owner',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
         User::create([
@@ -118,6 +124,7 @@ class UserSeeder extends Seeder
             'user_type' => 'Photographer',
             'contact'=> "09123456689",
             'address' => "Zone-3 Sta.Cruz, Naga City, Camarines Sur",
+            'year_experience' => "5 years",
             'remember_token' => Str::random(10),
         ]);
 

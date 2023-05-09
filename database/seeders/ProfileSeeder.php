@@ -21,6 +21,14 @@ class ProfileSeeder extends Seeder
             'fee' => "1,400",
             'availability' => "Available",
         ]);
+        
+        Profile::create([
+            'user_id' => 2,
+            'project_count' => null,
+            'img' => null,
+            'fee' => null,
+            'availability' => null,
+        ]);
 
         Profile::create([
             'user_id' => 3,

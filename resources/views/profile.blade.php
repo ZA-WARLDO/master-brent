@@ -24,11 +24,19 @@
                 @if($user->user_type!='Customer')
                 <p>Years Experience: <b> {{$user->year_experience}}</b> </p>
                 <!--Button for Availability -->
+                @if($profile->availability=="Available")
             <div class="row mt-md-4">
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <button class="btn btn-avail fw-bold px-5 mt-2">{{$profile->availability}}</buton>
                 </div>
             </div>
+               @else
+               <div class="row mt-md-4">
+                <div class="col-md-4">
+                    <button class="btn btn-red fw-bold px-5 mt-2">{{$profile->availability}}</buton>
+                </div>
+            </div>
+            @endif
                
             </div>       
     </div>
