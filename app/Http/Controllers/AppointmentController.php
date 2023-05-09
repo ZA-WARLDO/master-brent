@@ -84,7 +84,7 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::find($id);
 
-        return view('editingAppointment', ['appointment' => $appointment]);
+        return view('editappointment', ['appointment' => $appointment]);
     }
 
 
@@ -101,11 +101,17 @@ class AppointmentController extends Controller
         $appointment = Appointment::findOrFail($id);
 
         // Update the appointment with the form data
-        $appointment->update($request->all());
+        $appointment->cus_name = $request->input('cus_name');
+        $appointment->start_date = $request->input('start_date');
+        $appointment->end_date = $request->input('end_date');
+        $appointment->event = $request->input('event');
+        $appointment->start_time = $request->input('start_time');
 
-        // Optionally, you can add a success message or perform other actions
+        // Save the appointment
+        $appointment->save();
 
-        // Redirect back to the appointments index page
+
+        // Redirect back to the appointment view
         return redirect()->route('appointment');
     }
 

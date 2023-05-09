@@ -30,6 +30,7 @@ Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 's
 Route::post('/appointment/add',[App\Http\Controllers\AppointmentController::class, 'store'])->name('appointment.add');
 Route::delete('/appointment/delete/{appointment}', [App\Http\Controllers\AppointmentController::class, 'destroy'])->name('appointment.delete');
 Route::get('/appointment/edit/{id}', [App\Http\Controllers\AppointmentController::class, 'edit'])->name('appointment.edit');
+Route::post('/appointment/update/{id}', [App\Http\Controllers\AppointmentController::class, 'update'])->name('appointment.update');
 
 Route::middleware(['auth'])->group(function () {
     // Protected routes 
