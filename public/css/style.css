@@ -8,7 +8,7 @@
     top: 0;
     left:0;
     width: 100%;
-    height: calc(100% + 50px); 
+    height: calc(100% + 0px); 
     background-size: cover;
     background: url("../img/bg image.jpg") no-repeat;
     background-position: center;
@@ -16,7 +16,7 @@
 }
 
 .content{
-    margin-top: 50px;
+    margin-top: 10px;
     position: relative; 
     z-index: 1; 
 }
@@ -39,7 +39,7 @@
     font-size: 40px;
 }
 .vis{
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .capsurelogo{
