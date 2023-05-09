@@ -13,32 +13,27 @@
 </div>
 </div>
 
-<div class="container">
-    <table class="table mx-auto border border-black mt-3">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Project Count</th>
-                <th scope="col">Commission Fee</th>
-                <th scope="col">Availability</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-                <td>{{$user->name}}</td>
-                <td>{{$user->profile ? $user->profile->project_count : null}}</td>
-                <td>{{$user->profile ? $user->profile->fee : null}} pesos</td>
+<div class="container mt-4">
+    <div class="row">
+    @foreach($users as $user)
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class=" text-center card-title">{{ $user->name }}</h5>
+                <p class="card-text"><strong>Project Count:</strong> {{ $user->profile ? $user->profile->project_count : null }}</p>
+                <p class="card-text"><strong>Commission Fee:</strong> {{ $user->profile ? $user->profile->fee : null }} pesos</p>
                 @if ($user->profile && $user->profile->availability == "Available")
-                <td class="avl-color">{{$user->profile->availability}}</td>
+                <p class="card-text"><strong class="avl-color">{{ $user->profile->availability }}</strong></p>
                 @else
-                <td class="navl-color">{{$user->profile ? $user->profile->availability : null}}</td>
+                <p class="card-text"><strong class="navl-color"> {{ $user->profile ? $user->profile->availability : null }}</strong></p>
                 @endif
-            </tr>
-            @endforeach
+                <button class="btn btn-aqua">See Profile</button>
+            </div>
+        </div>
+    </div>
+    @endforeach
+</div>
 
-        </tbody>
-    </table>
     <div class="text-end">
         {{ $users->links('pagination::bootstrap-4') }}
     </div>

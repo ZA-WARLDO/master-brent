@@ -38,12 +38,50 @@
                                 @enderror
                             </div>
                         </div>
-
+                         
+                        <!--Address-->
                         <div class="row mb-3">
+                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required autocomplete="new-address">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!--Contact Number -->
+                            <div class="row mb-3">
+                            <label for="contact" class="col-md-4 col-form-label text-md-end">{{ __('Contact') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="contact" type="text" class="form-control @error('contact') is-invalid @enderror" name="contact" required autocomplete="new-contact">
+
+                                @error('contact')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                         <!--User Type -->
+                         <div class="row mb-3">
                             <label for="user_type" class="col-md-4 col-form-label text-md-end">{{ __('User_Type') }}</label>
 
                             <div class="col-md-6">
-                                <input id="user_type" type="text" class="form-control @error('user_type') is-invalid @enderror" name="user_type" required autocomplete="new-user_type">
+                                <div class="input-group">
+                                    <select id="user_type" class="form-control @error('user_type') is-invalid @enderror" name="user_type" required autocomplete="new-user_type">
+                                        <option  value="" selected disabled><p class="text-blue">Click to Select User Type</p></option>
+                                        <option value="Customer">Customer</option>
+                                        <option value="Studio Owner">Studio Owner</option>
+                                        <option value="Photographer">Photographer</option>
+                                    </select>
+                                </div>
 
                                 @error('user_type')
                                     <span class="invalid-feedback" role="alert">
@@ -52,6 +90,9 @@
                                 @enderror
                             </div>
                         </div>
+
+
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>

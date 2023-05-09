@@ -27,7 +27,7 @@ class ServicesController extends Controller
         $query->where('user_type', $user_type);
     });
 
-    $users = $query->paginate(3);
+    $users = $query->paginate(6);
 
     return view('services', compact('users', 'user_type'));
 }
