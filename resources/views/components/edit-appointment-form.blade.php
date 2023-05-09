@@ -1,7 +1,7 @@
 <div class="edit-appointment" hidden>
   <form method="POST" action="{{ route('appointment.edit',$appointment->id) }}">
     @csrf
-    @method('PUT')
+    @method('PATCH')
     <div class="form-row">
       <div class="form-group col-md-12">
         <label for="inputName">Name</label>

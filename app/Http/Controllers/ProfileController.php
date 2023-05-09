@@ -16,7 +16,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-       // Get the authenticated user
+        // Get the authenticated user
         $user = Auth::user();
 
         // Get the user data using Eloquent
@@ -54,9 +54,11 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(User $user)
     {
-        //
+        $userProfile = Profile::where('user_id', $user->id)->first();
+
+        return view('profile', ['user' => $user, 'profile' => $userProfile]);
     }
 
     /**

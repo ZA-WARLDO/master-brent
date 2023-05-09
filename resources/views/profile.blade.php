@@ -7,7 +7,7 @@
     <div class="container my-3 profile-font">
         <div class="row offset-md-1">
             <div class="col-md-4 my-2">
-            <img src="{{asset('img/Alex.png')}}" class="profile-size mx-3" alt="profile.jpg">
+            <img src="{{ asset('/img/' . $user->avatar) }}" class="profile-size mx-3" alt="profile.jpg">
             </div>
             <div class="col-md-8 ms-auto auth-mgn">
             <div class="row">
