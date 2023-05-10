@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\Portfolio;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PortfolioController extends Controller
 {
@@ -14,7 +17,14 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        // Retrieve the authenticated user
+        $user = Auth::user();
+        
+        $userData = User::where('id', $user->id)->first();
+        $profile = Profile::where('user_id', $user->id)->first();
+        
+        return view('portfolio', ['user' => $userData, 'profile' => $profile]);
+        
     }
 
     /**

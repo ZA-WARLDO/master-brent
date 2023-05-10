@@ -307,7 +307,7 @@ body{
 .event-css{
   width: 600px; 
   height: 400px; 
-  background-color: #064614;
+  background-color: #f1f3f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,8 +322,8 @@ body{
     z-index: -1;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -345,6 +345,12 @@ body{
     border: #073535 solid 1px;
   }
 
-  .bg-green{
-    background-color:#e1e1e2;
+  .setting-mgn{
+    margin-top: 170px;
+    opacity:75%;
+  }
+  .no-und{
+    text-decoration: none;
+    color: #221459;
+    font-weight: bold;
   }
