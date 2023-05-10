@@ -46,11 +46,9 @@ class PortfolioController extends Controller
     {
         // Get the Authenticated user
         $user = Auth::user();
-        $user = User::where('id', $user->id)->first();
 
         if ($request->hasFile('images')) {
             $images = $request->file('images');
-            $imagePaths = [];
 
             foreach ($images as $image) {
                 // Validate and process each image as needed
@@ -59,13 +57,13 @@ class PortfolioController extends Controller
                     $filename = $user->name . '_' . $originalName;
                     $image->move(public_path('img'), $filename);
 
-                    // Store the image path in the array
-                    $imagePaths[] = $filename;
+                    // Store the image path in a new portfolio entry
+                    $portfolio = new Portfolio();
+                    $portfolio->user_id = $user->id;
+                    $portfolio->images = $filename;
+                    $portfolio->save();
                 }
             }
-
-            // Update the user's portfolio with the image paths
-            $user->portfolio()->update(['images' => $imagePaths]);
         }
 
         return redirect('setting');
@@ -79,7 +77,7 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        
+        //
     }
 
     /**

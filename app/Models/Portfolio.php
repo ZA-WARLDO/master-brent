@@ -8,10 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Portfolio extends Model
 {
     use HasFactory;
-    protected $table = 'portfolio';
+    protected $table = 'portfolios';
+
+
 
     protected $fillable = ['images'];
-
+    protected $casts = [
+        'images' => 'array',
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);

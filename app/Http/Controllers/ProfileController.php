@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,12 +22,17 @@ class ProfileController extends Controller
         $user = Auth::user();
 
         // Get the user data using Eloquent
-        $userData = User::where('id', $user->id)->first();
-        $userProfile = Profile::where('user_id', $user->id)->first();
+        $user = User::find($user->id);
+        $profile = Profile::where('user_id', $user->id)->first();
+        $portfolio = Portfolio::where('user_id', $user->id)->get();
 
         // Pass the user data to the view
-        return view('profile', ['user' => $userData, 'profile' => $userProfile]);
+        return view('profile', compact('user', 'profile', 'portfolio'));
     }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
