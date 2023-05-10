@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
@@ -14,7 +17,11 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view ('setting');
+        $user = Auth::user();
+        $userData = User::where('id', $user->id)->first();
+        $profile = Profile::where('user_id', $user->id)->first();
+
+        return view ('setting',['profile' => $profile, 'user' => $userData]);
     }
 
     /**

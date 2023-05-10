@@ -1,56 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid p-5">
-        <div class="col-4 mx-auto p-4  border border-success border-2">
-            <h4 class="text-uppercase text-center">Edit Profile</h4>
-            <form method="POST" action="/portfolio/update/{{$user->id}}" enctype="multipart/form-data">
-                @csrf
-                <div class="row mb-2">
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            <label for="user_name">User Name</label>
-                            <input class="form-control @error('user_name') is-invalid @enderror" required id="user_name" name="user_name" type="text" placeholder="Edit your name" value="{{ $user->name }}">
-                            @error('user_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left column -->
+            <div class="col-md-3 bg-light">
+                <!-- Avatar -->
+                <div class="text-center mt-3">
+                    <img src="avatar.jpg" alt="User Avatar" class="rounded-circle" width="150" height="150">
+                </div>
+
+                <!-- Profile navigation -->
+                <ul class="nav flex-column nav-pills mt-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#profile-form" data-bs-toggle="tab">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio-form" data-bs-toggle="tab">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#delete-form" data-bs-toggle="tab">Delete Account</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right column -->
+            <div class="col-md-9">
+                <!-- Tab content -->
+                <div class="tab-content">
+                    <!-- Profile form -->
+                    <div class="tab-pane fade show active" id="profile-form">
+                        <h2 class="mt-3">Edit Profile</h2>
+                        <form method="POST" action="{{ route('editprofile') }}">
+                            @csrf
+                            @method('PUT')
+                            <!-- Form fields go here -->
+                        </form>
+                    </div>
+
+                    <!-- Portfolio form -->
+                    <div class="tab-pane fade" id="portfolio-form">
+                        <h2 class="mt-3">Edit Portfolio</h2>
+                        <form method="POST" action="{{ route('editprofile') }}">
+                            @csrf
+                            @method('PUT')
+                            <!-- Form fields go here -->
+                        </form>
+                    </div>
+
+                    <!-- Delete account form -->
+                    <div class="tab-pane fade" id="delete-form">
+                        <h2 class="mt-3">Delete Account</h2>
+                        <form method="POST" action="">
+                            @csrf
+                            @method('DELETE')
+                            <!-- Form fields go here -->
+                        </form>
                     </div>
                 </div>
-                <div class="row mb-2">
-                    <div class="col-sm-12">
-                        <div class="form-group">
-                            <label for="fee">Comission Fee</label>
-                            <input class="form-control @error('fee') is-invalid @enderror" required id="fee" name="fee" type="text"  value="{{ $profile->fee }}">
-                            @error('fee')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row-->
-                <div class="form-group">
-                    <label for="avatar">Upload Image</label>
-                    <div class="row">
-                        <div class="col-sm-6 ">
-                            <img id="preview-image-before-upload" src="{{asset('/img/'.$user->avatar)}}" alt="preview image" style="height: 200px; width: 200px; object-fit: cover;" class=" mb-2">
-                            <input class=" form-control @error('avatar') is-invalid @enderror " type="file" name="avatar" value="" id="avatar">
-                            @error('avatar')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class=" mt-5">
-                    <button class="btn btn-dark-purple ">Save</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 @endsection
