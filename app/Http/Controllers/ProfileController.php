@@ -6,6 +6,7 @@ use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -79,9 +80,52 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, $id)
     {
-        //
+
+        $user = User::findOrFail($id);
+        $profile = Profile::where('user_id', $user->id)->first();
+
+        // Update the user record with the provided form data
+        if ($request->has('email')) {
+            $user->email = $request->input('email');
+        }
+
+        if ($request->has('name')) {
+            $user->name = $request->input('name');
+        }
+
+        if ($request->has('address')) {
+            $user->address = $request->input('address');
+        }
+
+        if ($request->has('contact')) {
+            $user->contact = $request->input('contact');
+        }
+
+        if ($request->has('user_type')) {
+            $user->user_type = $request->input('user_type');
+        }
+
+        //profile
+        if ($request->has('fee')) {
+            $profile->fee = $request->input('fee');
+        }
+
+        if ($request->has('availabiity')) {
+            $profile->availability = $request->input('availability');
+        }
+
+        // Check if a new password is provided
+        $password = $request->input('password');
+        if ($password) {
+            $user->password = Hash::make($password); // Hash the password before storing it
+        }
+
+        $user->save();
+        $profile->save();
+
+        return redirect()->route('setting');
     }
 
     /**

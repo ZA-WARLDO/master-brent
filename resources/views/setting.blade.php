@@ -6,10 +6,19 @@
     <div class="row">
         <!-- Left column -->
         <div class="col-md-3 bg-light border border-black">
-            <!-- Avatar -->
-            <div class="text-center mt-3">
-                <img src="{{ asset('/img/' . $user->avatar) }}" alt="User Avatar" class="rounded-circle" width="150" height="150">
-            </div>
+            <form action="/avatar/update/{{$user->id}}" method="POST" enctype="multipart/form-data" id="avatar-form">
+                @csrf
+                <!-- Avatar -->
+                <div class="text-center mt-3">
+                    <img src="{{ asset('/img/' . $user->avatar) }}" alt="User Avatar" id="avatar-preview" class="rounded-circle" width="150" height="150">
+                    <label for="avatar-upload" class="mt-2">
+                        <b><i class="fs-4 bi bi-upload me-2"></i> Upload/Change Avatar</b>
+                    </label>
+                    <input type="file" id="avatar-upload" class="d-none" name="avatar" onchange="showPreview(this)">
+                </div>
+                <button type="button" class="me-2 ms-4 btn btn-secondary mt-3 d-none" id="cancel-button" onclick="cancelChanges()">Cancel</button>
+                <button type="submit" class="me-2 ms-4 btn btn-aqua mt-3 d-none" id="save-button">Save Changes</button>
+            </form>
 
             <!-- Profile navigation -->
             <ul class="nav flex-column nav-pills mt-4">
@@ -30,13 +39,11 @@
             <!-- Tab content -->
             <div class="tab-content bg-setting  border border-black">
                 <!-- Profile form -->
-                <div class="tab-pane fade show active mt-5" id="profile-form">
-                    <h2 class="mt-3 ms-3 profile-font pt-2"></h2>
-                    <form method="POST" action="">
+                <div class="tab-pane fade show active mt-3" id="profile-form">
+                    <form method="POST" action="/profile/update/{{$user->id}}">
                         @csrf
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$user->email}}" required autocomplete="email">
 
@@ -98,7 +105,7 @@
 
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <select id="user_type" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="" required autocomplete="new-user_type">
+                                    <select id="user_type" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="" autocomplete="new-user_type">
                                         <option value="" selected disabled>{{$user->user_type}}</option>
                                         <option value="Customer">Customer</option>
                                         <option value="Studio Owner">Studio Owner</option>
@@ -114,6 +121,41 @@
                             </div>
                         </div>
 
+                        <!-- Commission Fee -->
+                        <div class="row mb-3">
+                            <label for="fee" class="col-md-4 col-form-label text-md-end">{{ __('Fee') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="fee" type="text" class="form-control @error('fee') is-invalid @enderror" name="fee" value="{{$profile->fee}}" required autocomplete="new-fee">
+
+                                @error('fee')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="row mb-3">
+                            <label for="availability" class="col-md-4 col-form-label text-md-end">{{ __('Availability') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <select id="availability" class="form-control @error('user_type') is-invalid @enderror" name="availability" value="" autocomplete="new-availability">
+                                        <option value="" selected disabled>{{$profile->availability}}</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Not Available">Not Available</option>
+                                    </select>
+                                </div>
+
+                                @error('user_type')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
                         <!--Password-->
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
@@ -151,12 +193,25 @@
 
                 <!-- Portfolio form -->
                 <div class="tab-pane fade" id="portfolio-form">
-                    <form method="POST" action="{{ route('editprofile') }}">
-                        @csrf
-                        @method('PUT')
-                        <!-- Form fields go here -->
-                    </form>
+                    <div class="d-flex justify-content-center">
+                        <form action="/portfolio/add" method="POST" enctype="multipart/form-data" class="col-lg-6">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="images" class="form-label">Select Images:</label>
+                                <input type="file" id="images" name="images[]" class="form-control" multiple onchange="previewImages(event)">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Preview:</label>
+                                <div class="border rounded p-2" style="max-width: 300px;">
+                                    <img src="{{ asset('/img/Upload Image.png') }}" alt="Preview Image" id="preview-image" class="img-fluid" style="max-width: 100%; height: auto;">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                    </div>
                 </div>
+
+
 
                 <!-- Delete account form -->
                 <div class="tab-pane fade" id="delete-form">
@@ -191,4 +246,53 @@
         </div>
     </div>
 </div>
+
+<script>
+    function showPreview(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById('avatar-preview').src = e.target.result;
+                showSaveButton();
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function showSaveButton() {
+        var saveButton = document.getElementById('save-button');
+        var cancelButton = document.getElementById('cancel-button');
+        saveButton.classList.remove('d-none');
+        cancelButton.classList.remove('d-none');
+    }
+
+    function cancelChanges() {
+        var fileInput = document.getElementById('avatar-upload');
+        var saveButton = document.getElementById('save-button');
+        var cancelButton = document.getElementById('cancel-button');
+        fileInput.value = '';
+        document.getElementById('avatar-preview').src = "{{ asset('/img/' . $user->avatar) }}";
+        saveButton.classList.add('d-none');
+        cancelButton.classList.add('d-none');
+    }
+
+    //previewing image in portfolio form
+    function previewImages(event) {
+        var preview = document.getElementById("preview-image");
+        var files = event.target.files;
+
+        if (files && files.length > 0) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(files[0]);
+        }
+    }
+</script>
+
 @endsection

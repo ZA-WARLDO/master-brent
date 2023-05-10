@@ -286,12 +286,17 @@ body{
 
 .bg-setting{
     background-color: #c6c5c7;
-    height: 87%;
+    height: 88%;
     width: 75%;
     background-size: cover;
     background-attachment: fixed;
     position: absolute;
     
+}
+
+.img-up{
+    max-width:100%;
+    height:auto;
 }
 
 .content-st{

@@ -33,8 +33,9 @@ Route::post('/appointment/add',[App\Http\Controllers\AppointmentController::clas
 Route::delete('/appointment/delete/{appointment}', [App\Http\Controllers\AppointmentController::class, 'destroy'])->name('appointment.delete');
 Route::get('/appointment/edit/{id}', [App\Http\Controllers\AppointmentController::class, 'edit'])->name('appointment.edit');
 Route::post('/appointment/update/{id}', [App\Http\Controllers\AppointmentController::class, 'update'])->name('appointment.update');
-Route::post('/profile/update/{id}', [App\Http\Controllers\Profile::class, 'update'])->name('profile.update');
-
+Route::post('/profile/update/{id}', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::post('/avatar/update/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('avatar.update');
+Route::post('/portfolio/add',[App\Http\Controllers\PortfolioController::class, 'store'])->name('portfolio.add');
 
 Route::middleware(['auth'])->group(function () {
     // Protected routes 
