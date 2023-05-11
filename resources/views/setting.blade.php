@@ -191,13 +191,13 @@
                 </div>
 
 
-
+                @if($user->user_type!="Customer")
                 <!-- Portfolio form -->
                 <div class="tab-pane fade" id="portfolio-form">
                     <div class="d-flex justify-content-center">
                         <form action="/portfolio/add" method="POST" enctype="multipart/form-data" class="col-lg-6">
                             @csrf
-                            <div class="mb-3">
+                            <div class="mt-3 mb-3">
                                 <label for="images" class="form-label">Select Images:</label>
                                 <input type="file" id="images" name="images[]" class="form-control" multiple onchange="previewImages(event)">
                             </div>
@@ -207,11 +207,11 @@
                                     <img src="{{ asset('/img/Upload Image.png') }}" alt="Preview Image" id="preview-image" class="img-fluid" style="max-width: 100%; height: auto;">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button type="submit" class="btn btn-aqua">Upload</button>
                         </form>
                     </div>
                 </div>
-
+                @endif
 
 
                

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
         <div class="dropdown text-end">
-            <button id="service-dropdown" class="btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button id="service-dropdown" class="mt-3 btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 @if($user_type === 'Photographer')
                 Photographer
                 @elseif($user_type === 'Studio Owner')

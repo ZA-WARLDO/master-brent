@@ -4,10 +4,10 @@
 <div class="container-fluid m-auto ">
     <h2 class="text-center fs-1 my-3 fnt-style p-2 ltr-spng fw-bold">Profile</h2>
     <hr class="opac">
-    <div class="container my-3 profile-font">
-        <div class="row offset-md-1">
+    <div class=" p-3 mt-1 container my-2 profile-font">
+        <div class=" p-5 mt-2 row offset-md-0 excess-sdw ms-5">
             <div class="col-md-4 my-2">
-                <img src="{{ asset('/img/' . $user->avatar) }}" class="profile-size mx-3" alt="profile.jpg">
+                <img src="{{ asset('/img/' . $user->avatar) }}" class="opac-0 profile-size mx-3" alt="profile.jpg">
             </div>
             <div class="col-md-8 ms-auto auth-mgn">
                 <div class="row">
@@ -40,9 +40,9 @@
                 </div>
             </div>
         </div>
-
+        @if($user->user_type!="Customer")
         <hr class="opac">
-        <h2 class="text-center fs-1 my-4 fnt-style p-2 ltr-spng fw-bold">Portfolio</h2>
+        <h2 class="mt-5 text-center fs-1 my-4 fnt-style p-2 ltr-spng fw-bold">Portfolio</h2>
 
         <!-- Carousel Part -->
         <div class="container">
@@ -53,7 +53,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card mx-auto border-0">
-                                <img src="{{ asset('img/portfol.jpg') }}" class="carousel-size mx-auto" alt="...">
+                                    <img src="{{ asset('img/portfol.jpg') }}" class="carousel-size mx-auto" alt="...">
                                 </div>
                             </div>
                         </div>
@@ -82,6 +82,7 @@
                 </button>
             </div>
         </div>
+        @endif
 
     </div>
 </div>
