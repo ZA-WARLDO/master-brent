@@ -28,8 +28,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#portfolio-form" data-bs-toggle="tab">Portfolio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#delete-form" data-bs-toggle="tab">Delete Account</a>
+                <li class="nav-item mt-2">
+                <a class=" ms-3 text-decoration-none fw-bold navl-color" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Account</a>
                 </li>
             </ul>
         </div>
@@ -126,7 +126,7 @@
                             <label for="fee" class="col-md-4 col-form-label text-md-end">{{ __('Fee') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fee" type="text" class="form-control @error('fee') is-invalid @enderror" name="fee" value="{{$profile->fee}}" required autocomplete="new-fee">
+                            <input id="fee" type="text" class="form-control @error('fee') is-invalid @enderror" name="fee" value="" placeholder="Enter Commission Fee" required autocomplete="new-fee">
 
                                 @error('fee')
                                 <span class="invalid-feedback" role="alert">
@@ -142,25 +142,26 @@
 
                             <div class="col-md-6">
                                 <div class="input-group">
-                                    <select id="availability" class="form-control @error('user_type') is-invalid @enderror" name="availability" value="" autocomplete="new-availability">
-                                        <option value="" selected disabled>{{$profile->availability}}</option>
+                                    <select id="availability" class="form-control @error('availability') is-invalid @enderror" name="availability" value="" autocomplete="new-availability">
+                                        <option value="" selected disabled>Select Availability</option>
                                         <option value="Available">Available</option>
                                         <option value="Not Available">Not Available</option>
                                     </select>
                                 </div>
 
-                                @error('user_type')
+                                @error('availability')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
                         </div>
+                        
                         <!--Password-->
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
+                                <input id="password" placeholder="Enter New Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password">
                                 <small class="form-text text-muted text-black">Leave it blank if you don't want to change the password.</small>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -174,7 +175,7 @@
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                <input id="password-confirm" placeholder="Confirm New Password" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
                             </div>
                         </div>
 
@@ -213,16 +214,13 @@
 
 
 
-                <!-- Delete account form -->
-                <div class="tab-pane fade" id="delete-form">
-                    <h2 class="mt-3">Delete Account</h2>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Account</button>
+               
 
                     <!-- Delete confirmation modal -->
                     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                                <form method="POST" action="">
+                                <form method="POST" action="/home/delete/{{$user->id }}">
                                     @csrf
                                     @method('DELETE')
                                     <div class="modal-header">
@@ -240,7 +238,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
             </div>
         </div>

@@ -34,6 +34,7 @@ class ProfileController extends Controller
 
 
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -64,8 +65,9 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         $userProfile = Profile::where('user_id', $user->id)->first();
+        $portfolio = Portfolio::where('user_id', $user->id)->get();
 
-        return view('profile', ['user' => $user, 'profile' => $userProfile]);
+        return view('profile', ['user' => $user, 'profile' => $userProfile, 'portfolio' => $portfolio]);
     }
 
     /**
@@ -93,33 +95,17 @@ class ProfileController extends Controller
         $profile = Profile::where('user_id', $user->id)->first();
 
         // Update the user record with the provided form data
-        if ($request->has('email')) {
-            $user->email = $request->input('email');
-        }
+        $user->email = $request->input('email', $user->email);
+        $user->name = $request->input('name', $user->name);
+        $user->address = $request->input('address', $user->address);
+        $user->contact = $request->input('contact', $user->contact);
+        $user->user_type = $request->input('user_type', $user->user_type);
 
-        if ($request->has('name')) {
-            $user->name = $request->input('name');
-        }
-
-        if ($request->has('address')) {
-            $user->address = $request->input('address');
-        }
-
-        if ($request->has('contact')) {
-            $user->contact = $request->input('contact');
-        }
-
-        if ($request->has('user_type')) {
-            $user->user_type = $request->input('user_type');
-        }
-
-        //profile
-        if ($request->has('fee')) {
-            $profile->fee = $request->input('fee');
-        }
-
-        if ($request->has('availabiity')) {
-            $profile->availability = $request->input('availability');
+        // Update the profile record with the provided form data
+        if ($profile) {
+            $profile->fee = $request->input('fee', $profile->fee);
+            $profile->availability = $request->input('availability', $profile->availability);
+            $profile->save();
         }
 
         // Check if a new password is provided
@@ -129,8 +115,6 @@ class ProfileController extends Controller
         }
 
         $user->save();
-        $profile->save();
-
         return redirect()->route('setting');
     }
 

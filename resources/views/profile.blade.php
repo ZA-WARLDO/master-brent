@@ -15,7 +15,6 @@
                         <h1 class="mb-md-0 fw-bold">{{$user->name}}</h1>
                         <p class="mt-md-0 text-blue fs-5">{{$user->user_type}}</p>
                     </div>
-
                 </div>
                 <div class="fw-regular mt-md-2">
                     <p>Address: <b>{{$user->address}} </b></p>
@@ -27,20 +26,21 @@
                     @if($profile->availability=="Available")
                     <div class="row mt-md-4">
                         <div class="col-md-4">
-                            <button class="btn btn-avail fw-bold px-5 mt-2">{{$profile->availability}}</buton>
+                            <button class="btn btn-avail fw-bold px-5 mt-2">{{$profile->availability}}</button>
                         </div>
                     </div>
                     @else
                     <div class="row mt-md-4">
                         <div class="col-md-4">
-                            <button class="btn btn-red fw-bold px-5 mt-2">{{$profile->availability}}</buton>
+                            <button class="btn btn-red fw-bold px-5 mt-2">{{$profile->availability}}</button>
                         </div>
                     </div>
                     @endif
-
+                    @endif
                 </div>
             </div>
         </div>
+
         <hr class="opac">
         <h2 class="text-center fs-1 my-4 fnt-style p-2 ltr-spng fw-bold">Portfolio</h2>
 
@@ -48,6 +48,17 @@
         <div class="container">
             <div id="carouselExampleControls" class="carousel slide carousel-dark carousel-fade">
                 <div class="carousel-inner">
+                    @if ($portfolio->isEmpty())
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mx-auto border-0">
+                                <img src="{{ asset('img/portfol.jpg') }}" class="carousel-size mx-auto" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @else
                     @foreach ($portfolio as $index => $port)
                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                         <div class="row">
@@ -59,6 +70,7 @@
                         </div>
                     </div>
                     @endforeach
+                    @endif
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,9 +83,10 @@
             </div>
         </div>
 
-
-        @else
-        <p></br></p>
-        @endif
     </div>
-    @endsection
+</div>
+
+</script>
+
+
+@endsection

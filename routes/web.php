@@ -36,6 +36,7 @@ Route::post('/appointment/update/{id}', [App\Http\Controllers\AppointmentControl
 Route::post('/profile/update/{id}', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 Route::post('/avatar/update/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('avatar.update');
 Route::post('/portfolio/add',[App\Http\Controllers\PortfolioController::class, 'store'])->name('portfolio.add');
+Route::delete('/home/delete/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])->name('account.delete');
 
 Route::middleware(['auth'])->group(function () {
     // Protected routes 

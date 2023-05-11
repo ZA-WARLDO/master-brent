@@ -95,7 +95,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'id' => 7,
-            'name' => "Errol Jami Celis",
+            'name' => "Elden Jami Cruz",
             'email' => "ejamicelis@gbox.adnu.edu.ph",
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('errolpassword'),

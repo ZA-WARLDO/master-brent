@@ -16,21 +16,24 @@ class ServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($user_type = null)
-{
-    if (!in_array($user_type, ['Photographer', 'Studio Owner'])) {
-        $user_type = 'Photographer';
+    {
+        if (!in_array($user_type, ['Photographer', 'Studio Owner'])) {
+            $user_type = 'Photographer';
+        }
+
+        $query = User::query();
+
+        $query->whereHas('profile', function ($query) use ($user_type) {
+            $query->where('user_type', $user_type);
+        });
+
+        $users = $query->paginate(3);
+
+        $users->appends(['user_type' => $user_type]); // Append the user_type parameter to the pagination links
+
+        return view('services', compact('users', 'user_type'));
     }
-    
-    $query = User::query();
 
-    $query->whereHas('profile', function ($query) use ($user_type) {
-        $query->where('user_type', $user_type);
-    });
-
-    $users = $query->paginate(3);
-
-    return view('services', compact('users', 'user_type'));
-}
 
 
 

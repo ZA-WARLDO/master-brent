@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -38,5 +39,24 @@ class HomeController extends Controller
         $user->save();
 
         return redirect('setting');
+    }
+
+    //delete
+    public function destroy($id)
+    {
+        // Find the user record by ID
+        $user = User::find($id);
+
+        // Check if the user exists
+        if ($user) {
+            // Delete the user record
+            $user->delete();
+
+            // Redirect the user or show a success message
+            return redirect()->route('home')->with('success', 'Account deleted successfully.');
+        } else {
+            // Redirect the user or show an error message
+            return redirect()->route('home')->with('error', 'Account not found.');
+        }
     }
 }
