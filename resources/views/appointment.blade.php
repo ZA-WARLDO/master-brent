@@ -23,6 +23,10 @@
         </tr>
       </thead>
       <tbody class="text-center">
+        @if(count($appointments) === 0)
+        <td colspan="6" class="text-muted fs-5 ">No Appointment</td>
+
+        @else
         @foreach ($appointments as $appointment)
         <tr>
           <td class="text-start">{{$appointment->cus_name}}</td>
@@ -35,9 +39,9 @@
               <div class="col-md-1 me-3">
                 <a href="/appointment/edit/{{$appointment->id}}" class="btn btn-aqua edit-button" type="button">Edit</a>
               </div>
-              
-              
-            
+
+
+
               <div class="col-md-1 ms-4">
                 <form action="{{ route('appointment.delete', $appointment->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointment?');">
                   @csrf
@@ -49,6 +53,7 @@
           </td>
         </tr>
         @endforeach
+        @endif
       </tbody>
     </table>
     <!--Pagination --->
