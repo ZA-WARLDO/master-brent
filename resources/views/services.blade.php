@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid bg-secondary bg-opacity-10">
+    <div class="container-fluid">
         <div class="dropdown text-end">
             <button id="service-dropdown" class="mt-3 btn btn-dark-purple dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 @if($user_type === 'Photographer')
@@ -24,17 +25,17 @@
     </div>
 
 
-
+    <!--Show Service Providers-->
     <div class="container mt-4">
         <div class="row">
             @foreach($users as $user)
             <div class="col-md-4 mb-4">
-                <div class="card bg-green shadow-lg">
+                <div class="card bg-green excess-sdw">
                     <div class="ms-2 card-body ltr-spng">
                         <img class="text-center avatar-ser" src="{{ asset('/img/' . $user->avatar) }}">
                         <h5 class="mt-2 card-title"><strong>{{ $user->name }}</strong></h5>
                         Project Count: <strong>{{ $user->profile ? $user->profile->project_count : null }}</strong><br />
-                        Commission Fee: <strong>P{{ $user->profile ? $user->profile->fee : null }}</strong>
+                        Commission Fee: <strong>P{{ $user->profile ? $user->profile->fee : null }} /hour</strong>
                         @if ($user->profile && $user->profile->availability == "Available")
                         <p class="card-text"><strong class="avl-color">{{ $user->profile->availability }}</strong></p>
                         @else
@@ -51,6 +52,7 @@
             {{ $users->links('pagination::bootstrap-4') }}
         </div>
     </div>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

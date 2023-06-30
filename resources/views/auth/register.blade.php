@@ -4,14 +4,14 @@
 <div class="container lgn-mgn">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card bor ">
-                <div class="card-header text-center txt-color fw-bold fs-3 ltr-spng bor2">{{ __('SIGN UP') }}</div>
+            <div class="card bor-aqua">
+                <div class="card-header text-center aq-clr fw-bold fs-3 ltr-spng bor2">{{ __('SIGN UP') }}</div>
 
-                <div class="card-body">
+                <div class="card-body ">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <div class="row mb-3 ">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
@@ -71,12 +71,12 @@
 
                          <!--User Type -->
                          <div class="row mb-3">
-                            <label for="user_type" class="col-md-4 col-form-label text-md-end">{{ __('User_Type') }}</label>
+                            <label for="user type" class="col-md-4 col-form-label text-md-end">{{ __('User Type') }}</label>
 
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <select id="user_type" class="form-control @error('user_type') is-invalid @enderror" name="user_type" required autocomplete="new-user_type">
-                                        <option  value="" selected disabled><p class="text-blue">Click to Select User Type</p></option>
+                                        <option  value="" selected disabled><p class="text-muted">Click to select user type</p></option>
                                         <option value="Customer">Customer</option>
                                         <option value="Studio Owner">Studio Owner</option>
                                         <option value="Photographer">Photographer</option>
@@ -118,7 +118,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-aqua">
                                     {{ __('Sign Up') }}
                                 </button>
                             </div>

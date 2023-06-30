@@ -53,12 +53,13 @@ body{
     background-color: #ffffff;
     font-family: 'Poppins';
 }
+
 .nav-link{
     color: #221459;
     font-weight: 33px;
 }
 .navbar-nav .active{
-    border-bottom: #FFF61F solid 3px;
+    border-bottom: #073535 solid 3px;
 }
 
 .loginbutton{
@@ -79,8 +80,8 @@ body{
     margin-right: 65px;
 }
 .signbutton{
-    background-color: #FFF61F;
-    color: #221459;
+    background-color: #073535;
+    color: #ffffff;
     font-family: 'Poppins';
     text-transform: uppercase ;
     border: rgb(131, 128, 128) solid 1px;
@@ -94,8 +95,14 @@ body{
 .txt-color{
     color: #221459;
 }
+.aq-clr{
+    color:#073535;
+}
 .bor{
     border: #221459 solid 1px;
+}
+.bor-aqua {
+    border: #073535 solid 1px;
 }
 .bor2{
     border-bottom: #ffffff solid 1px;
@@ -136,7 +143,7 @@ body{
     width: 50px;
     height: 50px;
     border-radius: 75%;
-    border: #073535 solid 1px;
+    border: #a4a7a7 solid 1px;
 }
 
 /* Profile Stylesheets*/
@@ -147,7 +154,7 @@ body{
 }
 .fnt-style{
     font-family: 'Poppins';
-    color: #66645E;
+    color: #221459;
 }
 .opac{
     opacity: 12%;
@@ -156,10 +163,10 @@ body{
     border-radius: 25%;
 }
 .excess-sdw{
-    box-shadow: 0 0 5px 5px rgba(13, 6, 31, 0.13);
+    box-shadow: 0 0 3px 0 #192427;
 }
 .ltr-spng{
-   letter-spacing: 0.3em;
+   letter-spacing: 0.2em;
 }
 .carousel-size{
     width: 670px;
@@ -192,7 +199,7 @@ body{
 
 
 .btn-red{
-    background-color: #D21010;
+    background-color: #d13636;
     color: #ffffff;
 }
 .btn-aqua{
@@ -293,6 +300,7 @@ body{
 
 /*Setting*/
 
+
 .bg-setting{
     background-color: #c6c5c7;
     height: 88%;
@@ -312,6 +320,10 @@ body{
     margin-bottom: -100px;
 }
 
+.nav-pills .nav-link.active {
+    background-color: #023047;
+  
+}
 /*Event*/
 
 .event-css{
@@ -351,7 +363,7 @@ body{
     width:100px;
     height:100px;
     border-radius: 75%;
-    border: #073535 solid 1px;
+    border: #a4a7a7 solid 1px;
   }
 
   .setting-mgn{
