@@ -1,22 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/views/about.blade.php": "/views/about.blade.php",
-    "/views/appointment.blade.php": "/views/appointment.blade.php",
-    "/views/auth/login.blade.php": "/views/auth/login.blade.php",
-    "/views/auth/passwords/confirm.blade.php": "/views/auth/passwords/confirm.blade.php",
-    "/views/auth/passwords/email.blade.php": "/views/auth/passwords/email.blade.php",
-    "/views/auth/passwords/reset.blade.php": "/views/auth/passwords/reset.blade.php",
-    "/views/auth/register.blade.php": "/views/auth/register.blade.php",
-    "/views/auth/verify.blade.php": "/views/auth/verify.blade.php",
-    "/views/components/appointment-form.blade.php": "/views/components/appointment-form.blade.php",
-    "/views/editappointment.blade.php": "/views/editappointment.blade.php",
-    "/views/events.blade.php": "/views/events.blade.php",
-    "/views/home.blade.php": "/views/home.blade.php",
-    "/views/layouts/app.blade.php": "/views/layouts/app.blade.php",
-    "/views/portfolio.blade.php": "/views/portfolio.blade.php",
-    "/views/profile.blade.php": "/views/profile.blade.php",
-    "/views/services.blade.php": "/views/services.blade.php",
-    "/views/setting.blade.php": "/views/setting.blade.php",
-    "/views/welcome.blade.php": "/views/welcome.blade.php"
+    "/css/app.css": "/css/app.css"
 }
