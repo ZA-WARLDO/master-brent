@@ -1,9 +1,7 @@
-runtime: php80
+runtime: php
 env: flex
 
 runtime_config:
+  runtime_version: "8.2"
   document_root: public
-
-handlers:
-  - url: /.*
-    script: auto
+  
