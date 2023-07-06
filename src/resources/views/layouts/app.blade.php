@@ -426,7 +426,7 @@ body{
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signbutton fw-bold btn-sm rounded">{{ __('Sign Up') }}</button></a>
+                                    <a class="nav-link" href="{{ route('register') }}"><button type="button" class="btn signbutton btn-sm rounded">{{ __('Sign Up') }}</button></a>
                                 </li>
                             @endif
                         @else
