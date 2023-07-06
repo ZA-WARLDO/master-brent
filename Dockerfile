@@ -1,7 +1,9 @@
 FROM php:8.2-fpm-alpine
 
 USER root
-RUN apk add --no-cache nginx wget php php-fpm 
+RUN apk add --no-cache nginx wget php php-fpm  php-pdo php-pdo_mysql
+
+RUN docker-php-ext-install pdo_mysql
 
 RUN mkdir -p /run/nginx
 
