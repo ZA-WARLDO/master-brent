@@ -29,6 +29,25 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+
+
+
+            .bg-gradient{
+                background-image: linear-gradient(to right, #C939E6, #4AD8CE);
+            }
+
+            .brand{
+                font-family: 'Raleway';
+                color: white;
+    
+}
+        </style>
 </head>
 
 <body>
