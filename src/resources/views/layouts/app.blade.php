@@ -86,10 +86,11 @@
         <nav class="navbar navbar-expand-md navbar-light border bg-gradient">
             <div class="container-fluid ">
                 <a href="/" class="navbar-brand"><span class="brand">Atomic Nutrition</span></a>
-
+            @if (request()->is('/'))
                 <ul class="navbar-nav ms-auto">
                     <li><a href="/sign-in"><span class="brand">Sign in</span></a></li>
                 </ul>
+            @endif
             </div>
 
            
