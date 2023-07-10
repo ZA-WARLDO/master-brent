@@ -19,6 +19,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
 
     <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
 
 
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Raleway:wght@700&display=swap');
 
 
 
@@ -60,9 +61,19 @@
                 border-radius: 50px;
                 text-transform: uppercase;
                 font-weight: bold;
-                background-image: linear-gradient(to right, #C939E6, #7195E5);
+                background-image: linear-gradient(to right, #C939E6, #9081DB);
                 padding: 12px 30px;
                 border: none;
+            }
+
+
+
+            .purple-bg{
+                border-color: #C939E6;
+            }
+
+            .purple-bg-color{
+                background-color: #c939e6;
             }
 
            
@@ -77,7 +88,7 @@
                 <a href="/" class="navbar-brand"><span class="brand">Atomic Nutrition</span></a>
 
                 <ul class="navbar-nav ms-auto">
-                    <li><a href="/"><span class="brand">Sign in</span></a></li>
+                    <li><a href="/sign-in"><span class="brand">Sign in</span></a></li>
                 </ul>
             </div>
 
@@ -88,6 +99,6 @@
             @yield('content')
         </main>
     </div>
-
+            
 
 </body>
