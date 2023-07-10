@@ -45,8 +45,28 @@
             .brand{
                 font-family: 'Raleway';
                 color: white;
-    
-}
+                }
+
+
+            .parent{
+                position: relative;
+                height: 70vh;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            .button{
+                border-radius: 50px;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-image: linear-gradient(to right, #C939E6, #7195E5);
+                padding: 12px 30px;
+                border: none;
+            }
+
+           
+
         </style>
 </head>
 
@@ -63,5 +83,11 @@
 
            
         </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
+
+
 </body>
