@@ -11,7 +11,7 @@
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control purple-bg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" >
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -34,7 +34,7 @@
   
   <div class="row mt-3 text-center">
     <div class="col">
-        <p>Dont have a account? <a href="/"><span style="font-weight: bold; color: black;">Sign up</span></a></p>
+        <p>Don't have a account? <a href="/"><span style="font-weight: bold; color: black;">Sign up</span></a></p>
     </div>
   </div>
   
