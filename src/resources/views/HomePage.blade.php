@@ -92,7 +92,7 @@
         </div>
         <div class="row">
           <div class="col"><strong>Total</strong></div>
-          <div class="col"><strong>1800</strong></div>
+          <div class="col"><strong>1227</strong></div>
         </div>
        </div>
       </div>
@@ -111,15 +111,107 @@
         </div>
     </div>
     <div class="progress" style="padding: 0" role="progressbar" aria-label="Example with label" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar" style="width: 75%">2250/3000</div>
+      <div class="progress-bar" style="width: 75%"><b>2250/3000</b></div>
     </div>
    
   </div>
 
   <div style="display: flex; justify-content: center; align-items: center;  gap: 3rem">
-    <a href="" style="display: inline-block; color: white; padding: 10px 25px; border-radius: 20px; background-image: linear-gradient(to right, #C939E6, #9081DB); text-decoration: none; font-weight: bold;">ADD FOOD</a>
-    <a href="" style="display: inline-block; color: white; padding: 10px 25px; border-radius: 20px; background-image: linear-gradient(to right, #C939E6, #9081DB); text-decoration: none; font-weight: bold;">SUMMARY</a>
+    <!-- Button trigger modal -->
+<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 7px; background-image: linear-gradient(to right, #C939E6, #9081DB); color: white; width: 150px; height: 35px; border: none;">
+  <b>ADD FOOD</b>
+</button>
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight: 900; color: #24225C;">Log Food Here</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="row d-flex">
+                <div class="col-md"><input class="form-control" type="text" placeholder="Enter Food Here" aria-label="default input example"></div>
+                <div class="col-md "><input class="form-control" type="text" placeholder="Calories" aria-label="default input example"></div>
+              </div>
+              <div class="row my-2">
+                <div class="col-12">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Time of Day</option>
+                    <option value="1">Breakfast</option>
+                    <option value="2">Lunch</option>
+                    <option value="3">Dinner</option>
+                  </select></div> 
+              </div>
+          </div>
+          <div class="d-flex align-item-center justify-content-center">
+            <button type="button" class="btn " data-bs-dismiss="modal" style="width: 1000px; border-radius: 0px; background-image: linear-gradient(to right, #C939E6, #9081DB); color: white; font-weight: 900px;">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#summary"style="border-radius: 7px; background-image: linear-gradient(to right, #C939E6, #9081DB); color: white; width: 150px; height: 35px; border: none;">
+  <b>SUMMARY</b>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="summary" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel" style="font-size: 50; color: #24225C;"><b>Summary</b></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="row">
+        <div class="col" style=" color: #24225C; font-size: 30px;"><b>Breakfast</b></div>
+        <div class="col" style=" color: #24225C; font-size: 30px;"><b>623</b></div>
+      </div>
+      <div class="row">
+        <div class="col">Dog Meat</div>
+        <div class="col">123</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">HamBurger</div>
+        <div class="col">500</div>
+      </div>
+       <div class="row" style=" color: #24225C; font-size: 30px; ">
+        <div class="col"><b>Lunch</b></div>
+        <div class="col"><b>400</b></div>
+      </div>
+       <div class="row mb-3">
+        <div class="col">Ramen</div>
+        <div class="col">400</div>
+       </div>
+       <div class="row" style=" color: #24225C; font-size: 30px; ">
+        <div class="col"><b>Dinner</b></div>
+        <div class="col"><b>1227</b></div>
+      </div>
+       <div class="row">
+        <div class="col">Chicken & Rice</div>
+        <div class="col">177</div>
+      </div>
+      <div class="row">
+        <div class="col">Coke Soda</div>
+        <div class="col">500</div>
+      </div>
+      <div class="row">
+        <div class="col">Hershey</div>
+        <div class="col">550</div>
+      </div>
+      <div class="row my-3" style=" color: #24225C; font-size: 30px; ">
+        <div class="col"><b>Total  Calories</b></div>
+        <div class="col"><b>2250</b></div>
+      </div>
+      </div>
+      
+    </div>
   </div>
+</div>
+  </div>
+  
 </div>
 
 
