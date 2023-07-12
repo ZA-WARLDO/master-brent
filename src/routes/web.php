@@ -22,3 +22,8 @@ Route::get('/sign-in', function () {
 
     return view('Sign-in');
 });
+
+
+Route::get('/homepage', function () {
+    return view('HomePage');
+});

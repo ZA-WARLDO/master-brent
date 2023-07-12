@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="text-center">
-    <button type="submit" class="btn " style="color: white; font-weight: bold; padding: 7px 125px; background-image: linear-gradient(to right, #C939E6, #9081DB);">Sign In</button>
+    <a class="btn" href="/homepage" style="color: white; font-weight: bold; padding: 7px 125px; background-image: linear-gradient(to right, #C939E6, #9081DB);">Sign In</a>
   </div>
   
   <div class="row mt-3 text-center">
